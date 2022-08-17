@@ -194,7 +194,7 @@ $app->get('/', function() use ($app) {
 });
 ```
 
-We use our `get_events()` function to load the event data. After that, we need to make sure that they are sorted by date properly. For that, we use `usort()`, PHP's sorting function that accepts a custom comparison function. PHP doesn't know how to sort our custom event data by date, so we have to supply a function that tells it when an event is "less than" or "greater than" another event. The convention for that is, that our function returns `-1` if the first value is considered "smaller", `0` when they are equal and `1` when the first value is "less than" the second. This way, we can make any values sortable by our own criteria.
+We use our `get_events()` function to load the event data. After that, we need to make sure that they are sorted by date properly. For that, we use `usort()`, PHP's sorting function that accepts a custom comparison function. PHP doesn't know how to sort our custom event data by date, so we have to supply a function that tells it when an event is "less than" or "greater than" another event. The convention for that is, that our function returns `-1` if the first value is considered "smaller", `0` when they are equal and `1` when the first value is "greater than" the second. This way, we can make any values sortable by our own criteria.
 
 After sorting, we use `var_export()` to get a quick look at our data. `var_export()` is similar to `var_dump()` but it returns its output instead of printing it, if we set the second argument to `true`. We will use something much better for output in a moment but to check, if everything so far works, this is ok.
 
